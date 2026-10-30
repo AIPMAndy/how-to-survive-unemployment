@@ -349,3 +349,6 @@ body.dark .panel,body.dark .sidebar,body.dark .task{background:#222226!important
 body.dark .panel h2,body.dark .stagehead h2,body.dark .task h3{color:#f5f5f7}
 body.dark .footer{background:#1c1c20}
 body.dark .footer-feature h2{color:#f5f5f7}
+
+/* V3 MOBILE CLIP FIX: intentional oversized product shot must not expand page width. */
+.hero{overflow-x:clip}
