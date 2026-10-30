@@ -1,7 +1,7 @@
 {
   "title": "失业了咋办？Andy 给你保姆级攻略",
   "subtitle": "离职前 · 前7天 · 3个月 · 6个月 · 1年。拿回该拿的钱，保住现金流，找到下一份收入。",
-  "reviewed_at": "2026-10-08",
+  "reviewed_at": "2026-10-30",
   "stages": [
     {
       "id": "before",
@@ -139,6 +139,69 @@
       "url": "https://www.shanghai.gov.cn/gwk/search/content/b34a4573b2df4032bbdc9a97876b3d99",
       "org": "上海市政府",
       "reviewed_at": "2026-10-08"
+    },
+    {
+      "id": "guangzhou-u",
+      "title": "广州：失业保险常见问题解答（2025年11月版）",
+      "url": "https://rsj.gz.gov.cn/zzzq/shbz/sbfw/tzgg/content/post_10577822.html",
+      "org": "广州市人社局",
+      "reviewed_at": "2026-10-30"
+    },
+    {
+      "id": "guangzhou-wage",
+      "title": "广州：2026年调整最低工资标准的通知",
+      "url": "https://rsj.gz.gov.cn/zwdt/tzgg/content/post_10981036.html",
+      "org": "广州市人社局",
+      "reviewed_at": "2026-10-30"
+    },
+    {
+      "id": "guangdong-u-law",
+      "title": "广东：广东省失业保险条例",
+      "url": "https://hrss.gd.gov.cn/ztzl/yshj/shbz/content/post_4670427.html",
+      "org": "广东省人社厅",
+      "reviewed_at": "2026-10-30"
+    },
+    {
+      "id": "guangzhou-register",
+      "title": "广州：失业登记办理指南",
+      "url": "https://www.gz.gov.cn/zwfw/zxfw/jyfw/content/post_10140574.html",
+      "org": "广州市政府",
+      "reviewed_at": "2026-10-30"
+    },
+    {
+      "id": "guangdong-med-gap",
+      "title": "广东：职工医保断缴了，怎么办？",
+      "url": "https://hsa.gd.gov.cn/dawenku/sybx/content/post_4459737.html",
+      "org": "广东省医保局",
+      "reviewed_at": "2026-10-30"
+    },
+    {
+      "id": "guangdong-flex",
+      "title": "广东：灵活就业人员参加企业职工养老保险办法解读",
+      "url": "https://hrss.gd.gov.cn/zcfg/zcjd/content/post_4891786.html",
+      "org": "广东省人社厅",
+      "reviewed_at": "2026-10-30"
+    },
+    {
+      "id": "guangzhou-fund",
+      "title": "广州：非本市户籍离职满半年提取公积金指引",
+      "url": "https://gjj.gz.gov.cn/bsfw/cjwt/tq/content/post_10095338.html",
+      "org": "广州住房公积金管理中心",
+      "reviewed_at": "2026-10-30"
+    },
+    {
+      "id": "guangdong-subsidy",
+      "title": "广东：就业创业补贴补助申请办理指导清单（2026年修订版）",
+      "url": "https://www.gz.gov.cn/zt/ljgaqngcwqwl/zccs/content/post_10903377.html",
+      "org": "广东省人社厅（广州市政府转载）",
+      "reviewed_at": "2026-10-30"
+    },
+    {
+      "id": "guangzhou-arbitration",
+      "title": "广州：劳动人事争议仲裁服务指南",
+      "url": "https://rsj.gz.gov.cn/ywzt/ldgx/ldrszyzc/zcgg/content/post_2407253.html",
+      "org": "广州市人社局",
+      "reviewed_at": "2026-10-30"
     }
   ],
   "tasks": [
@@ -605,6 +668,68 @@
       "sources": [],
       "proof": "公开分享的材料已脱敏",
       "blocked": "不知道怎么脱敏：先不要公开上传文件",
+      "risk": "中"
+    },
+    {
+      "id": "gz1",
+      "stage": "week",
+      "city": "guangzhou",
+      "title": "广州：先办失业登记，再申领最低工资90%的失业金",
+      "urgency": "紧急",
+      "detail": "广州失业金按本市最低工资90%按月计发：官方问答写明现行2250元/月（对应最低工资2500元）；2026年9月1日起最低工资调为2680元/月，按同一公式为2412元/月，新标准起始费款期以社保经办公布为准。缴费1—4年每满1年领1个月，超过4年部分每满半年加1个月，最长24个月。",
+      "steps": [
+        "在粤省事或粤就业办理失业登记",
+        "在粤省事、广东人社APP或网上服务平台申领失业保险金",
+        "从领取次月起每月做一次资格核对"
+      ],
+      "sources": [
+        "guangzhou-u",
+        "guangzhou-wage",
+        "guangdong-u-law",
+        "guangzhou-register"
+      ],
+      "proof": "保存失业登记结果、失业金受理记录、核定月数和每月资格核对记录",
+      "blocked": "超过7个工作日无审核结果或被驳回：查进度并向社保经办窗口问清具体原因",
+      "risk": "高"
+    },
+    {
+      "id": "gz2",
+      "stage": "week",
+      "city": "guangzhou",
+      "title": "广州：医保断缴别超过3个月",
+      "urgency": "紧急",
+      "detail": "领失业金期间职工医保由失业保险基金支付，个人不缴费。没领失业金的，职工医保停缴次月起停止待遇；广东规定连续参保满2年的灵活就业人员中断3个月内续保不设等待期，超过3个月各市可设不超过6个月等待期。外地户籍可凭广东就业登记证明在就业地以灵活就业身份参保。",
+      "steps": [
+        "查医保停缴月份和是否已领失业金",
+        "决定以灵活就业参加职工医保还是参加居民医保",
+        "在断缴3个月内向广州医保或税务渠道办理续保"
+      ],
+      "sources": [
+        "guangzhou-u",
+        "guangdong-med-gap",
+        "guangdong-flex"
+      ],
+      "proof": "记录医保停缴月份、续保方式、缴费金额和待遇恢复日期",
+      "blocked": "已超过3个月：向广州医保经办确认等待期，不要自行假定能补缴",
+      "risk": "高"
+    },
+    {
+      "id": "gz3",
+      "stage": "week",
+      "city": "guangzhou",
+      "title": "广州：非本市户籍离职封存满半年可销户提取公积金",
+      "urgency": "建议",
+      "detail": "非广州户籍、已解除或终止劳动关系、个人账户封存满半年、未在异地继续缴存、无未结清公积金贷款的，可通过广州住房公积金管理中心公众号办理“异地户口离职”提取，提取后账户注销。广州户籍需满足失业满12个月且男满45岁、女满40岁等其他条件。",
+      "steps": [
+        "查询账户封存起始日期",
+        "确认没有在其他城市继续缴存",
+        "在公众号选择异地户口离职提取并提交"
+      ],
+      "sources": [
+        "guangzhou-fund"
+      ],
+      "proof": "保存提取申请编号和到账记录",
+      "blocked": "封存未满半年或有异地缴存：先办理异地转移，不要重复开户",
       "risk": "中"
     },
     {

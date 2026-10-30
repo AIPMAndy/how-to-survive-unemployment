@@ -10,7 +10,7 @@ body:
     id: city
     attributes:
       label: 适用城市
-      placeholder: 北京 / 上海 / 其他城市
+      placeholder: 北京 / 上海 / 广州 / 其他城市
     validations:
       required: true
   - type: textarea

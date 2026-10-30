@@ -12,8 +12,8 @@ DATA=json.loads((ROOT/'data/guide.json').read_text(encoding='utf-8'))
 class GuideValidation(unittest.TestCase):
     def test_stages_and_task_volume(self):
         self.assertEqual([s['id'] for s in DATA['stages']], ['before','week','month3','month6','year'])
-        self.assertEqual(len(DATA['tasks']), 50)
-        self.assertEqual(len(DATA['sources']), 15)
+        self.assertEqual(len(DATA['tasks']), 53)
+        self.assertEqual(len(DATA['sources']), 24)
     def test_unique_ids_and_valid_refs(self):
         stage_ids={s['id'] for s in DATA['stages']}
         source_ids={s['id'] for s in DATA['sources']}
@@ -23,7 +23,7 @@ class GuideValidation(unittest.TestCase):
         for t in DATA['tasks']:
             with self.subTest(task=t['id']):
                 self.assertIn(t['stage'],stage_ids)
-                self.assertIn(t['city'],('all','beijing','shanghai'))
+                self.assertIn(t['city'],('all','beijing','shanghai','guangzhou'))
                 self.assertTrue(t['steps'])
                 self.assertTrue(t['title'].strip())
                 self.assertTrue(t['detail'].strip())
@@ -47,6 +47,15 @@ class GuideValidation(unittest.TestCase):
         self.assertIn('1872',shanghai['detail'])
         self.assertIn('3个月',med['detail'])
         self.assertIn('等待期',med['detail'])
+        guangzhou=next(t for t in DATA['tasks'] if t['id']=='gz1')
+        self.assertEqual(guangzhou['city'],'guangzhou')
+        self.assertIn('90%',guangzhou['detail'])
+        self.assertIn('2250',guangzhou['detail'])
+        self.assertIn('2680',guangzhou['detail'])
+        self.assertIn('24个月',guangzhou['detail'])
+        gzpage=(ROOT/'guides/guangzhou.md').read_text(encoding='utf-8')
+        for part in ('2026-10-30','rsj.gz.gov.cn','gjj.gz.gov.cn','hsa.gd.gov.cn','以官方为准'):
+            self.assertIn(part,gzpage)
     def test_generated_offline_html_is_current(self):
         original=(ROOT/'index.html').read_bytes()
         result=subprocess.run([sys.executable,str(ROOT/'build.py')],cwd=str(ROOT),capture_output=True,text=True)
@@ -79,7 +88,7 @@ class GuideValidation(unittest.TestCase):
             self.assertIn(issue,audit)
 
     def test_offline_reader_pages_are_generated(self):
-        required=['guides/00-start-here.html','playbooks/01-labor-exit.html','playbooks/02-benefits-insurance.html','playbooks/03-cashflow-rescue.html','playbooks/04-job-search.html','playbooks/05-first-customer.html','playbooks/06-family-reset.html']
+        required=['guides/00-start-here.html','guides/beijing.html','guides/shanghai.html','guides/guangzhou.html','playbooks/01-labor-exit.html','playbooks/02-benefits-insurance.html','playbooks/03-cashflow-rescue.html','playbooks/04-job-search.html','playbooks/05-first-customer.html','playbooks/06-family-reset.html']
         for rel in required:
             with self.subTest(path=rel):
                 p=ROOT/rel
@@ -95,7 +104,7 @@ class GuideValidation(unittest.TestCase):
 
     def test_readme_completeness(self):
         readme=(ROOT/'README.md').read_text(encoding='utf-8')
-        for part in ('N+1','医保','公积金','现金流','CC BY 4.0','50 项','2026-10-08'):
+        for part in ('N+1','医保','公积金','现金流','CC BY 4.0','53 项','2026-10-08','广州'):
             self.assertIn(part,readme)
 
 if __name__=='__main__':unittest.main()

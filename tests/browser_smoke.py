@@ -23,7 +23,7 @@ async def main():
         page.on('pageerror',lambda e:errors.append(str(e)))
         await page.goto(BASE)
         assert await page.locator('h1').count()==1
-        assert await page.locator('.task').count()==50
+        assert await page.locator('.task').count()==53
         await page.locator('input[type="checkbox"]').first.check()
         assert await page.locator('#done-count').inner_text()=='1'
         await page.reload()
@@ -36,10 +36,10 @@ async def main():
         await page.locator('#avg-wage').fill('15000')
         assert '60,000' in await page.locator('#n-result').inner_text()
         await page.locator('#search').fill('医保')
-        assert 0<await page.locator('.task').count()<50
+        assert 0<await page.locator('.task').count()<53
         await page.locator('#search').fill('')
         await page.locator('#city').select_option('beijing')
-        assert await page.locator('.task').count()<50
+        assert await page.locator('.task').count()<53
         await page.locator('#city').select_option('all')
         await page.locator('#cash').fill('80000')
         await page.locator('#due').fill('0')
@@ -55,10 +55,10 @@ async def main():
         assert (await obj.value).suggested_filename=='失业自救行动清单.txt'
         mobile=await b.new_page(viewport={'width':390,'height':844},device_scale_factor=1)
         await mobile.goto(BASE)
-        assert await mobile.locator('.task').count()==50
+        assert await mobile.locator('.task').count()==53
         await mobile.screenshot(path=str(ROOT.parent/'unemployment-mobile-preview.png'),full_page=False)
         assert not errors,errors
-        print('BROWSER SMOKE PASS: 50 tasks, checklist persistence, search, city filter, 8.0 months, theme, download, mobile, zero JS errors')
+        print('BROWSER SMOKE PASS: 53 tasks, checklist persistence, search, city filter, 8.0 months, theme, download, mobile, zero JS errors')
         await b.close()
         server.shutdown()
 

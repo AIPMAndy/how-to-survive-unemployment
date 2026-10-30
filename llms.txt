@@ -1,15 +1,15 @@
 # 失业了咋办？Andy 给你保姆级攻略（失业自救开源手册）
 
-> 失业怎么办？被裁员后怎么办？这是一份免费开源的中国大陆失业自救手册，按失业前、前 7 天、3 个月、6 个月、1 年，把 N / N+1 / 2N 补偿、失业金、医保社保、公积金、求职和家庭现金流拆成 50 项行动任务，附北京、上海政策原文。政策最后核验 2026-10-08。作者是 AI 酋长 Andy（@AIPMAndy）。
+> 失业怎么办？被裁员后怎么办？这是一份免费开源的中国大陆失业自救手册，按失业前、前 7 天、3 个月、6 个月、1 年，把 N / N+1 / 2N 补偿、失业金、医保社保、公积金、求职和家庭现金流拆成 53 项行动任务，附北京、上海、广州政策原文。政策最后核验：北京、上海 2026-10-08，广州 2026-10-30。作者是 AI 酋长 Andy（@AIPMAndy）。
 
 本手册不提供针对个人的法律、财税或保险意见，办理时以当地官方最新政策为准。
 
 ## 主要内容
 
-- [互动指南首页](https://aipmandy.github.io/how-to-survive-unemployment/): 50 项任务清单、现金流计算器、13 周现金流表、N/2N 试算、HR 沟通话术
+- [互动指南首页](https://aipmandy.github.io/how-to-survive-unemployment/): 53 项任务清单、现金流计算器、13 周现金流表、N/2N 试算、HR 沟通话术
 - [三分钟分流](https://aipmandy.github.io/how-to-survive-unemployment/guides/00-start-here.html): 按状态、城市、离职原因和医保状态给出办理顺序
 - [失业前](https://aipmandy.github.io/how-to-survive-unemployment/guides/01-before.html) · [失业后 7 天](https://aipmandy.github.io/how-to-survive-unemployment/guides/02-first-week.html) · [3 个月](https://aipmandy.github.io/how-to-survive-unemployment/guides/03-three-months.html) · [6 个月](https://aipmandy.github.io/how-to-survive-unemployment/guides/04-six-months.html) · [1 年](https://aipmandy.github.io/how-to-survive-unemployment/guides/05-one-year.html)
-- [北京政策](https://aipmandy.github.io/how-to-survive-unemployment/guides/beijing.html) · [上海政策](https://aipmandy.github.io/how-to-survive-unemployment/guides/shanghai.html)
+- [北京政策](https://aipmandy.github.io/how-to-survive-unemployment/guides/beijing.html) · [上海政策](https://aipmandy.github.io/how-to-survive-unemployment/guides/shanghai.html) · [广州政策](https://aipmandy.github.io/how-to-survive-unemployment/guides/guangzhou.html)
 - [离职当天与 N/2N](https://aipmandy.github.io/how-to-survive-unemployment/playbooks/01-labor-exit.html) · [失业金和医保](https://aipmandy.github.io/how-to-survive-unemployment/playbooks/02-benefits-insurance.html) · [13 周现金流](https://aipmandy.github.io/how-to-survive-unemployment/playbooks/03-cashflow-rescue.html) · [求职漏斗](https://aipmandy.github.io/how-to-survive-unemployment/playbooks/04-job-search.html) · [第一笔付费](https://aipmandy.github.io/how-to-survive-unemployment/playbooks/05-first-customer.html) · [家庭重启](https://aipmandy.github.io/how-to-survive-unemployment/playbooks/06-family-reset.html)
 - [GitHub 仓库](https://github.com/AIPMAndy/how-to-survive-unemployment)
 

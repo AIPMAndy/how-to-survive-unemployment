@@ -41,7 +41,7 @@ gh repo create AIPMAndy/how-to-survive-unemployment --public --source=. --remote
 
 ## 给仓库做开源分发准备
 
-- Repo Description 可填：`失业了咋办？从 N+1、失业金到社保医保、公积金、重新找工作和个人生意。50项行动任务、6份实操SOP、13周现金流、北京上海政策，免费开源。`
+- Repo Description 可填：`失业了咋办？从 N+1、失业金到社保医保、公积金、重新找工作和个人生意。53项行动任务、6份实操SOP、13周现金流、北京上海广州政策，免费开源。`
 - Topics：`unemployment`、`career`、`job-search`、`layoff`、`china`、`career-guide`、`open-source`、`personal-finance`。
 - **Social preview**：到 Settings → General → Social preview，上传已生成的 `assets/social-preview.png`（1200×630）。
 - 仓库 About 中填写成功启用的 Pages 地址。
