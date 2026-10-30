@@ -369,3 +369,6 @@ body.dark .footer-feature h2{color:#f5f5f7}
  .hero h1{font-size:clamp(47px,10.5vw,64px)}
  .product-stage{margin-top:19px}
 }
+
+/* FINAL MOBILE NAV ALIGNMENT */
+@media(max-width:700px){.topbar .toplinks{width:auto!important;flex:0 0 auto;margin-left:auto!important;justify-content:flex-end!important;gap:10px!important}.topbar .brand{margin-right:auto}}
