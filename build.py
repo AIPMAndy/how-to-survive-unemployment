@@ -37,6 +37,10 @@ def build():
     page = page.replace(nav_marker, nav_marker + '<a href="https://metaver.vip/" target="_blank" rel="noopener noreferrer">Andy 官网 ↗</a>', 1)
     footer_marker = '由 AI酋长 Andy 发起 · 开源免费 · 内容 CC BY 4.0 / 代码 MIT'
     page = page.replace(footer_marker, footer_marker + ' · <a href="https://metaver.vip/" target="_blank" rel="noopener noreferrer">作者官网</a> · 微信 AIPMAndy', 1)
+    # FIELD NOTES V2 structure: visual storytelling only, all core JS hooks stay intact.
+    page=page.replace('</div><aside class="hero-side"', "<div class=\"hero-proof\" aria-label=\"项目特点\"><span>免费开源</span><span>无需登录</span><span>进度保存在本机</span></div>" + '</div><aside class="hero-side"',1)
+    page=page.replace('<footer class="footer"><div class="wrap">', '<footer class="footer">' + "<div class=\"footer-feature\"><span class=\"footer-index\">FIELD NOTES / OPEN-SOURCE SURVIVAL GUIDE</span><h2>人生不会因为一次失业，<br>就此定稿。</h2><nav aria-label=\"页脚快捷入口\"><a href=\"#actions\">行动清单 ↗</a><a href=\"#tools\">实用计算器 ↗</a><a href=\"guides/00-start-here.html\">阅读指南 ↗</a><a href=\"https://github.com/AIPMAndy/how-to-survive-unemployment\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub 开源 ↗</a></nav></div>" + '<div class="wrap">',1)
+    page=page.replace('<meta name="theme-color" content="#f6f7f8">', '<meta name="theme-color" content="#f8f7f2">',1)
     (ROOT/'index.html').write_text(page,encoding='utf-8')
     from render_pages import write_all
     reader_count=write_all()
