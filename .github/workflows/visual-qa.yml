@@ -1,0 +1,63 @@
+name: Visual responsive smoke QA
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rebuild HTML
+        run: python build.py
+      - name: Install browser
+        run: |
+          python -m pip install playwright==1.56.0
+          python -m playwright install chromium --with-deps
+      - name: Screenshot and interaction QA
+        run: |
+          python - <<'PY'
+          import pathlib,subprocess,time
+          from playwright.sync_api import sync_playwright
+          out=pathlib.Path('qa-artifacts');out.mkdir(exist_ok=True)
+          server=subprocess.Popen(['python','-m','http.server','8765','--bind','127.0.0.1'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+          try:
+            time.sleep(2)
+            with sync_playwright() as p:
+              browser=p.chromium.launch(headless=True,args=['--no-sandbox'])
+              for label,w,h in [('desktop',1440,900),('mobile',390,844),('mobile-small',375,812)]:
+                page=browser.new_page(viewport={'width':w,'height':h},device_scale_factor=1)
+                errors=[]
+                page.on('pageerror',lambda e:errors.append(str(e)))
+                page.goto('http://127.0.0.1:8765/index.html',wait_until='load')
+                page.locator('#tasks .task').first.wait_for(timeout=12000)
+                assert '先把下一步做好' in page.locator('h1').inner_text()
+                assert page.locator('.product-stage .showcase-window').count()==1
+                assert page.locator('#stage-list button').count()==6
+                page.screenshot(path=str(out/(label+'-hero.png')),full_page=False)
+                horizontal=page.evaluate('Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-window.innerWidth')
+                print(label,'horizontal overflow px',horizontal, 'JS errors',errors)
+                assert horizontal<=2, (label,'horizontal overflow',horizontal)
+                assert not errors,errors
+                page.locator('#cash').fill('80000')
+                page.locator('#expense').fill('10000')
+                page.locator('#income').fill('0')
+                assert page.locator('#runway').inner_text().strip()!='—'
+                page.locator('#stage-list button').nth(1).click()
+                assert page.locator('#tasks .task').count()>0
+                page.close()
+              browser.close()
+          finally:
+            server.terminate()
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: unemployment-visual-screenshots
+          path: qa-artifacts/
+          if-no-files-found: ignore
