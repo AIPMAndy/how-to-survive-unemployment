@@ -352,3 +352,20 @@ body.dark .footer-feature h2{color:#f5f5f7}
 
 /* V3 MOBILE CLIP FIX: intentional oversized product shot must not expand page width. */
 .hero{overflow-x:clip}
+
+
+/* BROWSER QA V3 POLISH — single-line mobile nav, no invisible product animation */
+.product-stage{animation:none!important;margin-top:26px}
+.hero{padding-top:70px}
+.hero h1{font-size:clamp(56px,7.2vw,86px);margin:19px 0 11px}
+.hero-caption{font-size:clamp(23px,3vw,32px);margin-bottom:10px}
+@media(max-width:700px){
+ .topbar .wrap{display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between;gap:9px}
+ .topbar .brand{flex:none}
+ .topbar .toplinks{display:flex;flex-wrap:nowrap;align-items:center;gap:8px;margin-left:auto}
+ #theme{font-size:0!important;min-width:31px;min-height:31px;padding:4px!important}
+ #theme::after{content:"◐";font-size:16px;color:#5b5b61}
+ .hero{padding-top:64px}
+ .hero h1{font-size:clamp(47px,10.5vw,64px)}
+ .product-stage{margin-top:19px}
+}
