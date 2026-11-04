@@ -1,6 +1,6 @@
 # 失业了咋办？Andy 给你保姆级攻略（失业自救开源手册）
 
-> 失业怎么办？被裁员后怎么办？这是一份免费开源的中国大陆失业自救手册，按失业前、前 7 天、3 个月、6 个月、1 年，把 N / N+1 / 2N 补偿、失业金、医保社保、公积金、求职和家庭现金流拆成 53 项行动任务，附北京、上海、广州政策原文。政策最后核验：北京、上海 2026-10-08，广州 2026-10-30。作者是 AI 酋长 Andy（@AIPMAndy）。
+> 失业怎么办？被裁员后怎么办？这是一份免费开源的中国大陆失业自救手册，按失业前、前 7 天、3 个月、6 个月、1 年，把 N / N+1 / 2N 补偿、失业金、医保社保、公积金、求职和家庭现金流拆成 53 项行动任务，附北京、上海、广州政策原文。政策最后核验：北京、上海 2026-10-08，广州 2026-10-30。作者是 AI酋长Andy（@AIPMAndy）。
 
 本手册不提供针对个人的法律、财税或保险意见，办理时以当地官方最新政策为准。
 
@@ -21,7 +21,7 @@
 
 ## 作者 About the author
 
-- AI 酋长 Andy（Andy Liu，GitHub/X @AIPMAndy）：前腾讯/百度 AI 产品专家，大模型独角兽前 VP，现专注 AI + 产品方法论创业。
+- AI酋长Andy（Andy Liu，GitHub/X @AIPMAndy）：前腾讯/百度 AI 产品专家，大模型独角兽前 VP，现专注 AI + 产品方法论创业。
 - AI Chief Andy (Andy Liu, @AIPMAndy on GitHub and X) is a former Tencent and Baidu AI product expert and former VP at an LLM unicorn, now a serial entrepreneur focused on AI and product methodology.
 - 服务：求职咨询；AI 增长和副业陪跑。服务范围先沟通确认。
 - 联系：微信 AIPMAndy · X https://x.com/AIPMAndy · Telegram https://t.me/AIPMAndy · 网站 https://metaver.vip/ · GitHub https://github.com/AIPMAndy

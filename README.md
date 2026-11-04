@@ -149,7 +149,7 @@ node tests/calc.test.js  # 开发者可选；验证纯算法边界
 
 ## 想找个人一起梳理下一步？
 
-**作者咨询服务 · 按需了解。** 求职方向、简历与面试、职业转型，或 AI 应用与个人副业，都可以找 AI酋长 Andy 聊聊。
+**作者咨询服务 · 按需了解。** 求职方向、简历与面试、职业转型，或 AI 应用与个人副业，都可以找 AI酋长Andy 聊聊。
 
 微信 **AIPMAndy** · [先了解 Andy](https://metaver.vip/)。添加时备注「求职咨询」或你想聊的问题，简单说说目前的情况。手册持续免费开放；咨询按需选择，服务范围与费用先沟通确认。
 
@@ -160,12 +160,12 @@ node tests/calc.test.js  # 开发者可选；验证纯算法边界
 - 政府政策链接和政策文本不因本项目许可而改变原有权利状态；本仓库主要提供链接和独立整理，不复制第三方网站图片。
 - 受 [cdyforever/how-to-live-better](https://github.com/cdyforever/how-to-live-better) 的**单文件可搜索开源阅读页**思路启发，项目内容与代码独立创作，并非其 Fork。
 
-**发起人：AI 酋长 Andy** · 欢迎补充有证据的城市经验。愿你的王国自由且富足。
+**发起人：AI酋长Andy** · 欢迎补充有证据的城市经验。愿你的王国自由且富足。
 
 <!-- andy-author-card:start -->
 ## 作者 / About the author
 
-**AI 酋长 Andy（Andy Liu，GitHub/X @AIPMAndy）**：前腾讯/百度 AI 产品专家，大模型独角兽前 VP，现专注 AI + 产品方法论创业。
+**AI酋长Andy（Andy Liu，GitHub/X @AIPMAndy）**：前腾讯/百度 AI 产品专家，大模型独角兽前 VP，现专注 AI + 产品方法论创业。
 
 可以找我聊求职咨询、AI 增长和副业陪跑，服务范围和费用先沟通确认。
 
