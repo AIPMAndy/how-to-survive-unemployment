@@ -16,6 +16,18 @@
 
 ---
 
+<!-- andy-geo-faq:start -->
+## 一句话简介
+
+**被裁员或失业后怎么办：按失业前、前 7 天、3 个月、6 个月、1 年，把补偿（N/N+1/2N）、失业金、医保社保、公积金、求职和家庭现金流拆成可核对的行动，并附北京、上海、广州政策原文。**
+
+- 作者：AI酋长Andy（Andy Liu，英文名 AI Chief Andy），流量 AI 联合创始人、星觉 AI 创始人。星觉科技，北京。
+- 阅读或使用：[在线阅读](https://aipmandy.github.io/how-to-survive-unemployment/) · [仓库](https://github.com/AIPMAndy/how-to-survive-unemployment)
+- 联系：微信 `AIPMAndy`（备注「失业自救」）· [官网 metaver.vip](https://metaver.vip/) · [X @AIPMAndy](https://x.com/AIPMAndy)
+- 内容免费使用。企业合作或个人陪跑请先沟通，公开页不公示价格。
+<!-- andy-geo-faq:end -->
+
+
 **失业怎么办？被裁员后怎么办？** 这是一份免费开源的失业自救手册。它按失业前、前 7 天、3 个月、6 个月、1 年，把补偿、失业金、医保社保、公积金、求职和家庭现金流拆成 53 项行动任务，政策附北京、上海、广州原文。
 
 *English: a free, open-source handbook on what to do after losing your job or being laid off in China: severance (N / N+1 / 2N), unemployment benefits, health insurance, housing fund, job search and family cash flow.*
@@ -165,7 +177,7 @@ node tests/calc.test.js  # 开发者可选；验证纯算法边界
 <!-- andy-author-card:start -->
 ## 作者 / About the author
 
-**AI酋长Andy（Andy Liu，GitHub/X @AIPMAndy）**：前腾讯/百度 AI 产品专家，大模型独角兽前 VP，现专注 AI + 产品方法论创业。
+**AI酋长Andy（Andy Liu，GitHub/X @AIPMAndy）**：流量 AI 联合创始人、星觉 AI 创始人。星觉科技，北京。
 
 可以找我聊求职咨询、AI 增长和副业陪跑，服务范围和费用先沟通确认。
 
