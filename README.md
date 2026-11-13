@@ -14,6 +14,17 @@
 
 </div>
 
+<!-- andy-pdf-edition:start -->
+## 精美 PDF 电子书
+
+[**免费下载《失业了怎么办：行动指南》**](pdf/how-to-survive-unemployment-guide.pdf) · [直接下载 PDF](https://github.com/AIPMAndy/how-to-survive-unemployment/raw/refs/heads/main/pdf/how-to-survive-unemployment-guide.pdf)
+
+**116 页 · A5 手机阅读版 · 可点击目录 · 0.93 MB**  
+整理日期：2026-11-13。包含完整实操正文、案例、模板与原始来源；平台规则与价格沿用原资料的核查日期。
+
+**作者与服务（广告）**：AI 酋长 Andy · 个人微信 **AIPMAndy** · [个人官网](https://metaver.vip/) · [公司官网](https://www.a6no1.cn/)。免费教程可直接使用，咨询与合作自愿选择。
+<!-- andy-pdf-edition:end -->
+
 ---
 
 <!-- andy-geo-faq:start -->

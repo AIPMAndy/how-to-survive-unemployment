@@ -1,0 +1,43 @@
+{
+  "repo": "how-to-survive-unemployment",
+  "title": "失业了怎么办：行动指南",
+  "date": "2026-11-13",
+  "source_commit": "d7201a06b320e50562924475251a2cbc3ce61f2f",
+  "pages": 116,
+  "sections": 28,
+  "source_files": [
+    "guides/00-start-here.md",
+    "guides/01-before.md",
+    "guides/02-first-week.md",
+    "guides/03-three-months.md",
+    "guides/04-six-months.md",
+    "guides/05-one-year.md",
+    "guides/beijing.md",
+    "guides/guangzhou.md",
+    "guides/shanghai.md",
+    "playbooks/01-labor-exit.md",
+    "playbooks/02-benefits-insurance.md",
+    "playbooks/03-cashflow-rescue.md",
+    "playbooks/04-job-search.md",
+    "playbooks/05-first-customer.md",
+    "playbooks/06-family-reset.md",
+    "templates/agency-call.md",
+    "templates/cashflow.md",
+    "templates/city-policy.md",
+    "templates/first-offer.md",
+    "templates/hr-conversation.md",
+    "data/guide.json"
+  ],
+  "website": "https://aipmandy.github.io/how-to-survive-unemployment/",
+  "bytes": 977306,
+  "sha256": "593fad589061cfc0dfaaa05d111f98c7a2f75337ddad87086349225082dc91a6",
+  "pdf_path": "pdf/how-to-survive-unemployment-guide.pdf",
+  "contacts": {
+    "personal_website": "https://metaver.vip/",
+    "company_website": "https://www.a6no1.cn/",
+    "wechat": "AIPMAndy",
+    "public_account": "AI 酋长 Andy"
+  },
+  "edition": "A5 · 黑白金实操系列 · PDF 2026.11",
+  "notes": "PDF编排日期不代表所有外部政策与价格的重新核验日期。源文件许可与案例标注继续适用。"
+}
