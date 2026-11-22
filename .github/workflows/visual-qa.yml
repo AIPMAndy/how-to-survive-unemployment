@@ -31,7 +31,7 @@ jobs:
             with sync_playwright() as p:
               browser=p.chromium.launch(headless=True,args=['--no-sandbox'])
               for label,w,h in [('desktop',1440,900),('mobile',390,844),('mobile-small',375,812)]:
-                page=browser.new_page(viewport={'width':w,'height':h},device_scale_factor=1)
+                page=browser.new_page(viewport={'width':w,'height':h},device_scale_factor=1,accept_downloads=True)
                 errors=[]
                 page.on('pageerror',lambda e:errors.append(str(e)))
                 page.goto('http://127.0.0.1:8765/index.html',wait_until='load')
@@ -50,6 +50,29 @@ jobs:
                 assert page.locator('#runway').inner_text().strip()!='—'
                 page.locator('#stage-list button').nth(1).click()
                 assert page.locator('#tasks .task').count()>0
+                # Source review workbench: 24 historical official records, filters,
+                # browser-only reading status, export and no mobile overflow.
+                page.goto('http://127.0.0.1:8765/source-audit.html',wait_until='load')
+                page.locator('#items .item').first.wait_for(timeout=12000)
+                assert page.locator('#items .item').count()==24
+                page.locator('#region').select_option('beijing')
+                count=page.locator('#items .item').count()
+                assert 0<count<24, ('beijing filter',count)
+                page.locator('#q').fill('失业')
+                assert page.locator('#items .item').count()<=count
+                page.locator('#reset').click()
+                assert page.locator('#items .item').count()==24
+                page.locator('#items .item input[type=checkbox]').first.check()
+                assert page.locator('#visited').inner_text()=='1'
+                page.reload(wait_until='load')
+                assert page.locator('#items .item input[type=checkbox]').first.is_checked()
+                with page.expect_download() as download:
+                  page.locator('#export').click()
+                assert download.value.suggested_filename.endswith('.txt')
+                horizontal=page.evaluate('Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-window.innerWidth')
+                assert horizontal<=2, ('source-audit overflow',label,horizontal)
+                page.screenshot(path=str(out/(label+'-source-audit.png')),full_page=False)
+                assert not errors,errors
                 page.close()
               browser.close()
           finally:
