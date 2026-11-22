@@ -10,7 +10,7 @@
 
 ![项目封面](assets/social-preview.png)
 
-[**打开在线互动指南**](https://aipmandy.github.io/how-to-survive-unemployment/) · [**从这里开始，3分钟分流**](https://aipmandy.github.io/how-to-survive-unemployment/guides/00-start-here.html) · [开始：失业后 7 天](#先做这-7-件事) · [北京政策](guides/beijing.md) · [上海政策](guides/shanghai.md) · [广州政策](guides/guangzhou.md) · [现金流模板](templates/cashflow.md) · [参与共建](CONTRIBUTING.md)
+[**打开在线互动指南**](https://aipmandy.github.io/how-to-survive-unemployment/) · [**官方政策来源复核台（24 条）**](https://aipmandy.github.io/how-to-survive-unemployment/source-audit.html) · [**从这里开始，3分钟分流**](https://aipmandy.github.io/how-to-survive-unemployment/guides/00-start-here.html) · [开始：失业后 7 天](#先做这-7-件事) · [北京政策](guides/beijing.md) · [上海政策](guides/shanghai.md) · [广州政策](guides/guangzhou.md) · [现金流模板](templates/cashflow.md) · [参与共建](CONTRIBUTING.md)
 
 </div>
 
