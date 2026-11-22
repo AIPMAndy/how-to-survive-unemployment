@@ -1,0 +1,64 @@
+name: Verify live Pages resources
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-live:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compare deployed content to current repository artifacts
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import pathlib
+          import time
+          import urllib.error
+          import urllib.request
+
+          root = pathlib.Path('.')
+          base = 'https://aipmandy.github.io/how-to-survive-unemployment/'
+          files = [
+              'index.html', 'source-audit.html', 'sitemap.xml', 'robots.txt',
+              'pdf/how-to-survive-unemployment-guide.pdf',
+          ]
+          manifest = json.loads((root / 'pdf/edition.json').read_text(encoding='utf-8'))
+          pdf_bytes = (root / manifest['pdf_path']).read_bytes()
+          pdf_sha = hashlib.sha256(pdf_bytes).hexdigest()
+          assert pdf_sha == manifest['sha256'], 'PDF differs from reviewed historical edition'
+          expected = {path: hashlib.sha256((root / path).read_bytes()).hexdigest() for path in files}
+          print('Expected repository resource SHA-256:', expected, flush=True)
+
+          failures = []
+          for attempt in range(1, 16):
+              failures = []
+              for path in files:
+                  url = base + path + '?sha=' + expected[path][:12]
+                  try:
+                      req = urllib.request.Request(url, headers={'User-Agent':'AIPMAndy-Pages-QA/1.0','Cache-Control':'no-cache'})
+                      with urllib.request.urlopen(req, timeout=25) as response:
+                          status = response.status
+                          data = response.read()
+                      actual = hashlib.sha256(data).hexdigest()
+                      if status != 200 or actual != expected[path]:
+                          failures.append(f'{path}: HTTP {status}; SHA {actual} != {expected[path]}')
+                      else:
+                          print(f'PASS {base+path} HTTP {status} sha256={actual}', flush=True)
+                  except (urllib.error.URLError, TimeoutError, OSError) as exc:
+                      failures.append(f'{path}: {type(exc).__name__}: {exc}')
+              if not failures:
+                  print(f'All {len(files)} live public resources matched main SHA-256.', flush=True)
+                  break
+              print(f'Attempt {attempt}/15: {len(failures)} public resources not yet matching:', failures, flush=True)
+              if attempt < 15:
+                  time.sleep(20)
+          if failures:
+              raise SystemExit('Live Pages verification failed: ' + '; '.join(failures))
+          PY
