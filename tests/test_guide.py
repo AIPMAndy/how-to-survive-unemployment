@@ -102,6 +102,24 @@ class GuideValidation(unittest.TestCase):
         self.assertIn('做完后留什么凭证',index)
         self.assertIn('UnemploymentMath',index)
 
+    def test_policy_workbench_keeps_canonical_sources_and_public_contacts(self):
+        page=(ROOT/'source-audit.html').read_text(encoding='utf-8')
+        match=re.search(r'const SOURCES=(\[.*?\]);\s*const STORAGE=',page,re.S)
+        self.assertIsNotNone(match,'source-audit.html must embed its offline source snapshot')
+        self.assertEqual(json.loads(match.group(1)),DATA['sources'])
+        self.assertEqual(len(json.loads(match.group(1))),24)
+        for marker in ('data/guide.json','2026-10-30','2026-11-23','https://www.a6no1.cn/','https://metaver.vip/services','AIPMAndy','rel="canonical"','"citation"','导出当前清单'):
+            self.assertIn(marker,page)
+        home=(ROOT/'index.html').read_text(encoding='utf-8')
+        self.assertIn('href="source-audit.html"',home)
+        self.assertIn('href="pdf/how-to-survive-unemployment-guide.pdf"',home)
+        self.assertIn('https://www.a6no1.cn/',home)
+        self.assertIn('https://metaver.vip/services',home)
+        self.assertIn('source-audit.html',(ROOT/'sitemap.xml').read_text(encoding='utf-8'))
+        manifest=json.loads((ROOT/'pdf/edition.json').read_text(encoding='utf-8'))
+        import hashlib
+        self.assertEqual(hashlib.sha256((ROOT/manifest['pdf_path']).read_bytes()).hexdigest(),manifest['sha256'])
+
     def test_readme_completeness(self):
         readme=(ROOT/'README.md').read_text(encoding='utf-8')
         for part in ('N+1','医保','公积金','现金流','CC BY 4.0','53 项','2026-10-08','广州'):
