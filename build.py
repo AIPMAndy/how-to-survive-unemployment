@@ -5,6 +5,42 @@ import json
 from pathlib import Path
 from html import escape
 ROOT=Path(__file__).resolve().parent
+# Same chapter and city pages already linked from the reader nav. Not new URLs.
+STAGE_PAGES={
+    'before':('guides/01-before.html','失业前'),
+    'week':('guides/02-first-week.html','前7天'),
+    'month3':('guides/03-three-months.html','三个月'),
+    'month6':('guides/04-six-months.html','六个月'),
+    'year':('guides/05-one-year.html','一年'),
+}
+CITY_PAGES={
+    'beijing':('guides/beijing.html','北京政策'),
+    'shanghai':('guides/shanghai.html','上海政策'),
+    'guangzhou':('guides/guangzhou.html','广州政策'),
+}
+
+def static_task_list(data):
+    """Ordinary HTML for the 53 tasks, using titles, summaries, and links that already exist."""
+    by_id={s['id']:s for s in data['sources']}
+    parts=[]
+    for t in data['tasks']:
+        links=[]
+        stage=STAGE_PAGES[t['stage']]
+        links.append(f'<a href="{escape(stage[0], quote=True)}">{escape(stage[1])}</a>')
+        city=CITY_PAGES.get(t['city'])
+        if city:
+            links.append(f'<a href="{escape(city[0], quote=True)}">{escape(city[1])}</a>')
+        for sid in t['sources']:
+            source=by_id[sid]
+            links.append(
+                f'<a href="{escape(source["url"], quote=True)}" target="_blank" rel="noopener noreferrer">{escape(source["org"])} ↗</a>'
+            )
+        tid=escape(t['id'], quote=True)
+        parts.append(
+            f'<article class="task" id="task-{tid}"><div class="task-top"><h3><a href="#task-{tid}">{escape(t["title"])}</a></h3></div>'
+            f'<p>{escape(t["detail"])}</p><div class="source-links">{"".join(links)}</div></article>'
+        )
+    return ''.join(parts)
 
 def build():
     data=json.loads((ROOT/'data/guide.json').read_text(encoding='utf-8'))
@@ -50,6 +86,10 @@ def build():
     page=page.replace('<h2>政策原文，不靠传言</h2><p class="sub">','<h2>政策原文，不靠传言</h2><p class="sub"><a href="source-audit.html">打开 24 条官方来源复核工作台 →</a> · ',1)
     page=page.replace('<a class="secondary" href="#tools">计算还能撑几个月</a></div>','<a class="secondary" href="#tools">计算还能撑几个月</a><a class="secondary" href="pdf/how-to-survive-unemployment-guide.pdf">下载 116 页 PDF ↓</a></div>',1)
     page=page.replace(' · 微信 AIPMAndy',' · 微信 AIPMAndy · <a href="https://www.a6no1.cn/" target="_blank" rel="noopener noreferrer">星觉科技官网</a> · <a href="https://metaver.vip/services" target="_blank" rel="noopener noreferrer">服务与咨询</a>',1)
+    task_markup=static_task_list(data)
+    empty_tasks='<div id="tasks" class="tasks" aria-live="polite"></div>'
+    assert empty_tasks in page
+    page=page.replace(empty_tasks, f'<div id="tasks" class="tasks" aria-live="polite">{task_markup}</div>', 1)
     (ROOT/'index.html').write_text(page,encoding='utf-8')
     from render_pages import write_all
     reader_count=write_all()
