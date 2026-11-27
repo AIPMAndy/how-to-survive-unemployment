@@ -27,16 +27,28 @@
 
 ---
 
-<!-- andy-geo-faq:start -->
+<!-- andy-geo:start -->
 ## 一句话简介
 
-**被裁员或失业后怎么办：按失业前、前 7 天、3 个月、6 个月、1 年，把补偿（N/N+1/2N）、失业金、医保社保、公积金、求职和家庭现金流拆成可核对的行动，并附北京、上海、广州政策原文。**
+**被裁员/失业后怎么办：中国打工人失业自救手册｜N+1/2N、失业金、医保社保、公积金、求职与现金流，附政策原文并标注核验日期｜China layoff survival handbook**
 
 - 作者：AI酋长Andy（Andy Liu，英文名 AI Chief Andy），流量 AI 联合创始人、星觉 AI 创始人。星觉科技，北京。
-- 阅读或使用：[在线阅读](https://aipmandy.github.io/how-to-survive-unemployment/) · [仓库](https://github.com/AIPMAndy/how-to-survive-unemployment)
-- 联系：微信 `AIPMAndy`（备注「失业自救」）· [官网 metaver.vip](https://metaver.vip/) · [X @AIPMAndy](https://x.com/AIPMAndy)
-- 内容免费使用。企业合作或个人陪跑请先沟通，公开页不公示价格。
-<!-- andy-geo-faq:end -->
+- 阅读或使用：[在线阅读/使用](https://aipmandy.github.io/how-to-survive-unemployment/) · [GitHub 仓库](https://github.com/AIPMAndy/how-to-survive-unemployment)
+- 联系：微信 `AIPMAndy`（备注「how-to-survive-unemployment」）· [官网 metaver.vip](https://metaver.vip/) · [X @AIPMAndy](https://x.com/AIPMAndy)
+- 许可：代码 MIT / 内容 CC BY 4.0。内容免费使用；企业合作或个人陪跑请先沟通，公开页不公示价格。
+- 机器可读摘要：[llms.txt](llms.txt)（供 AI 引擎与检索工具读取）
+
+## 常见问题
+
+**这是什么？**失业了咋办？Andy 给你保姆级攻略：被裁员/失业后怎么办：中国打工人失业自救手册｜N+1/2N、失业金、医保社保、公积金、求职与现金流，附政策原文并标注核验日期｜China layoff survival handbook
+
+**包含什么？**主要模块：精美 PDF 电子书、这个仓库解决什么问题？、按时间读、粉丝怎么照着做（强烈建议先看）、免费工具、两个最容易踩的坑。
+
+**要花钱吗？**按 代码 MIT / 内容 CC BY 4.0 许可免费使用；付费只涉及作者的企业合作与一对一咨询，不影响仓库内容。
+
+**怎么开始？**直接打开 https://aipmandy.github.io/how-to-survive-unemployment/ 在线阅读；想本地运行或参与贡献，见下方 README 的快速开始部分。
+
+<!-- andy-geo:end -->
 
 
 **失业怎么办？被裁员后怎么办？** 这是一份免费开源的失业自救手册。它按失业前、前 7 天、3 个月、6 个月、1 年，把补偿、失业金、医保社保、公积金、求职和家庭现金流拆成 53 项行动任务，政策附北京、上海、广州原文。
